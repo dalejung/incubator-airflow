@@ -83,6 +83,23 @@ matrix:
       env: TOX_ENV=py27-backend_postgres KUBERNETES_VERSION=v1.9.0
     - python: "2.7"
       env: TOX_ENV=py35-backend_postgres KUBERNETES_VERSION=v1.10.0
+  include:
+    - python: "3.7"
+      dist: xenial
+      sudo: true
+      env: TOX_ENV=py37-backend_mysql
+    - python: "3.7"
+      dist: xenial
+      sudo: true
+      env: TOX_ENV=py37-backend_sqlite
+    - python: "3.7"
+      dist: xenial
+      sudo: true
+      env: TOX_ENV=py37-backend_postgres
+    - python: "3.7"
+      dist: xenial
+      sudo: true
+      env: TOX_ENV=py37-backend_postgres KUBERNETES_VERSION=v1.10.0
 cache:
   directories:
     - $HOME/.wheelhouse/
